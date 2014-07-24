@@ -1,73 +1,44 @@
-# API Exemples for Ruby
+# API Exemples for PHP
 
-Here you can download the example code used in the API-documentation (http://developer.fortnox.se/examples/code-examples/ruby/). Feel free to add new examples for other HTTP libraries or fix any bugs you find by pull request.
+Here you can download the example code used in the API-documentation (http://developer.fortnox.se/examples/code-examples/php/). Feel free to add new examples for other HTTP libraries or fix any bugs you find by pull request.
 
-## net_http.rb
-Example code for [Net::HTTP][1] from the Ruby standard library.
+## curl.php
+Example code for [PHP:cURL][1] from the PHP standard library.
 
 Creating a new resource
-```ruby
-response = post( '/articles', { 'Article' => { 'Description' => 'My description' }} )
-article_number = response[ 'Article' ][ 'ArticleNumber' ]
+```php
+$raw_response = apiCall( 'POST', 'articles', '{"Article":{"Description":"My description"}}' );
+$response = json_decode( $raw_response, true );
+$article_number = $response[ 'Article' ][ 'ArticleNumber' ];
 ```
 
 Updating a resource
-```ruby
-put( '/articles/' + article_number, { 'Article' => { 'Description' => 'My updated description' }} )
+```php
+apiCall( 'PUT', 'articles/' . $article_number, '{"Article":{"Description":"My updated description"}}' )
 ```
 
 Retriving an existing resource
-```ruby
-get( '/articles/' + article_number )
+```php
+apiCall( 'GET', 'articles/' . $article_number );
 ```
 
 Deleting a resource
-```ruby
-delete( '/articles/' + article_number )
+```php
+apiCall( 'DELETE', 'articles/' . $article_number )
 ```
 
 Retriving a nonexistant resource
-```ruby
-get( '/articles/' + article_number )
+```php
+apiCall( 'GET', 'articles/' . $article_number )
 ```
 
-## httparty.rb
-Example code for the well used [HTTParty][2] library by John Nunemaker.
-
-Creating a new resource
-```ruby
-response = Fortnox.post( '/articles', { 'Article' => { 'Description' => 'My updated description' }} )
-article_number = response[ 'Article' ][ 'ArticleNumber' ]
-```
-
-Updating a resource
-```ruby
-Fortnox.put( '/articles/'+article_number, { 'Article' => { 'Description' => 'My more updated description' }})
-```
-
-Retriving an existing resource
-```ruby
-Fortnox.get( '/articles/' + article_number )
-```
-
-Deleting a resource
-```ruby
-Fortnox.delete( '/articles/' + article_number )
-```
-
-Retriving a nonexistant resource
-```ruby
-Fortnox.get( '/articles/' + article_number )
-```
-
-[1]: http://ruby-doc.org/stdlib-2.1.2/libdoc/net/http/rdoc/Net/HTTP.html
-[2]: https://github.com/jnunemaker/httparty
+[1]: http://php.net/manual/en/book.curl.php
 
 # Licence
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Fortnox AB, Jonas Schubert Erlandsson
+Copyright (c) 2013 Fortnox AB, Jesper Svensson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
