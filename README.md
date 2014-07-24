@@ -14,7 +14,7 @@ $article_number = $response[ 'Article' ][ 'ArticleNumber' ];
 
 Updating a resource
 ```php
-apiCall( 'PUT', 'articles/' . $article_number, '{"Article":{"Description":"My updated description"}}' )
+apiCall( 'PUT', 'articles/' . $article_number, '{"Article":{"Description":"My updated description"}}' );
 ```
 
 Retriving an existing resource
@@ -24,12 +24,12 @@ apiCall( 'GET', 'articles/' . $article_number );
 
 Deleting a resource
 ```php
-apiCall( 'DELETE', 'articles/' . $article_number )
+apiCall( 'DELETE', 'articles/' . $article_number );
 ```
 
 Retriving a nonexistant resource
 ```php
-apiCall( 'GET', 'articles/' . $article_number )
+apiCall( 'GET', 'articles/' . $article_number );
 ```
 
 [1]: http://php.net/manual/en/book.curl.php
