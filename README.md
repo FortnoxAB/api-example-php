@@ -6,28 +6,28 @@ Here you can download the example code used in the API-documentation (http://dev
 Example code for [Net::HTTP][1] from the Ruby standard library.
 
 Creating a new resource
-```
+```ruby
 response = post( '/articles', { 'Article' => { 'Description' => 'My description' }} )
 article_number = response[ 'Article' ][ 'ArticleNumber' ]
 ```
 
 Updating a resource
-```
+```ruby
 put( '/articles/' + article_number, { 'Article' => { 'Description' => 'My updated description' }} )
 ```
 
 Retriving an existing resource
-```
+```ruby
 get( '/articles/' + article_number )
 ```
 
 Deleting a resource
-```
+```ruby
 delete( '/articles/' + article_number )
 ```
 
 Retriving a nonexistant resource
-```
+```ruby
 get( '/articles/' + article_number )
 ```
 
@@ -35,28 +35,28 @@ get( '/articles/' + article_number )
 Example code for the well used [HTTParty][2] library by John Nunemaker.
 
 Creating a new resource
-```
+```ruby
 response = Fortnox.post( '/articles', { 'Article' => { 'Description' => 'My updated description' }} )
 article_number = response[ 'Article' ][ 'ArticleNumber' ]
 ```
 
 Updating a resource
-```
+```ruby
 Fortnox.put( '/articles/'+article_number, { 'Article' => { 'Description' => 'My more updated description' }})
 ```
 
 Retriving an existing resource
-```
+```ruby
 Fortnox.get( '/articles/' + article_number )
 ```
 
 Deleting a resource
-```
+```ruby
 Fortnox.delete( '/articles/' + article_number )
 ```
 
 Retriving a nonexistant resource
-```
+```ruby
 Fortnox.get( '/articles/' + article_number )
 ```
 
