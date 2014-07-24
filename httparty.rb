@@ -22,24 +22,3 @@ class Fortnox
     super endpoint, options
   end
 end
-
-# response = Fortnox.post( '/articles', { 'Article' => { 'Description' => 'My updated description' }} )
-# p response
-# p ''
-# article_number = response[ 'Article' ][ 'ArticleNumber' ]
-
-# response = Fortnox.put( '/articles/'+article_number, { 'Article' => { 'Description' => 'My more updated description' }})
-# p response
-# p ''
-
-# p Fortnox.get( '/articles/'+article_number )
-# p ''
-
-# response = Fortnox.delete( '/articles/'+article_number )
-# p response
-# p ''
-
-# response = Fortnox.get( '/articles/'+article_number )
-# p response
-# p ''
-

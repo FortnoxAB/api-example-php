@@ -5,8 +5,40 @@ Here you can download the example code used in the API-documentation (http://dev
 ## net_http.rb
 Example code for [Net::HTTP][1] from the Ruby standard library.
 
+Creating a new resource
+    response = post( '/articles', { 'Article' => { 'Description' => 'My description' }} )
+    article_number = response[ 'Article' ][ 'ArticleNumber' ]
+
+Updating a resource
+    put( '/articles/' + article_number, { 'Article' => { 'Description' => 'My updated description' }} )
+
+Retriving an existing resource
+    get( '/articles/' + article_number )
+
+Deleting a resource
+    delete( '/articles/' + article_number )
+
+Retriving a nonexistant resource
+    get( '/articles/' + article_number )
+
 ## httparty.rb
 Example code for the well used [HTTParty][2] library by John Nunemaker.
+
+Creating a new resource
+    response = Fortnox.post( '/articles', { 'Article' => { 'Description' => 'My updated description' }} )
+    article_number = response[ 'Article' ][ 'ArticleNumber' ]
+
+Updating a resource
+    Fortnox.put( '/articles/'+article_number, { 'Article' => { 'Description' => 'My more updated description' }})
+
+Retriving an existing resource
+    Fortnox.get( '/articles/' + article_number )
+
+Deleting a resource
+    Fortnox.delete( '/articles/' + article_number )
+
+Retriving a nonexistant resource
+    Fortnox.get( '/articles/' + article_number )
 
 [1]: http://ruby-doc.org/stdlib-2.1.2/libdoc/net/http/rdoc/Net/HTTP.html
 [2]: https://github.com/jnunemaker/httparty

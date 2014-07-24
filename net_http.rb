@@ -52,24 +52,3 @@ def delete( endpoint )
     Net::HTTP::Delete.new( uri.request_uri )
   end
 end
-
-# response = delete( '/articles/2014' )
-
-# response = post( '/articles', { 'Article' => { 'Description' => 'My description' }} )
-# p response
-# p ''
-# article_number = response[ 'Article' ][ 'ArticleNumber' ]
-# p article_number
-# p ''
-
-# response = put( '/articles/'+article_number, { 'Article' => { 'Description' => 'My updated description' }} )
-# p response
-# p ''
-
-# response = delete( '/articles/'+article_number )
-# p response
-# p ''
-
-# response = get( '/articles/'+article_number )
-# p response
-# p ''
