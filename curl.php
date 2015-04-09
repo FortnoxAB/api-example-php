@@ -4,7 +4,7 @@ define( 'ACCESS_TOKEN',  'your-access-token-here' );
 define( 'CLIENT_SECRET', 'your-client-secret-here' );
 define( 'CONTENT_TYPE',  'application/json' );
 define( 'ACCEPTS',       'application/json' );
-define( 'ENDPOINT',      'url-to-fortnox-api' );
+define( 'ENDPOINT',      'https://api.fortnox.se/3/' );
 
 function apiCall( $requestMethod, $entity, $body = null ){
 
